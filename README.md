@@ -1,0 +1,2 @@
+# AccaMagic
+Accumulator Magic
