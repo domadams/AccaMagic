@@ -9,19 +9,7 @@ module.exports = function(gulp) {
     const distDirectory = './dist/';
 
     gulp.task('build-app', () => {
-
-        gulp.src('./components/**/*')
-            .pipe(gulp.dest(distDirectory +'components'));
-
-        gulp.src('./config/**/*')
-            .pipe(gulp.dest(distDirectory + 'config'));
-
-        gulp.src(['./server.js',
-                './package.json',
-                './index.js',
-                './app.js'
-            ],
-            {base: './'})
+        gulp.src('./package.json', { base: './'})
             .pipe(gulp.dest(distDirectory));
     });
 };

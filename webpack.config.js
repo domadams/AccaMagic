@@ -1,41 +1,38 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = {
-    context: path.join(__dirname),
-    entry: './components/client.js',
+var commonLoaders = [
+    { test: /\.js$/, loader: 'babel-loader' }
+];
 
-    output: {
-        filename: 'app.js',
-        path: path.join(__dirname, 'dist/public')
+module.exports = [
+    {
+        // The configuration for the client
+        name: 'client-side rendering',
+        context: path.join(__dirname),
+        entry: './components/client.js',
+
+        output: {
+            filename: 'app.js',
+            path: path.join(__dirname, 'dist/public')
+        },
+        module: {
+            loaders: commonLoaders
+        }
     },
-    module: {
-        preLoaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
-            }
-        ],
-        loaders: [
-            // SASS
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-            }
-        ]
-    },
-    plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(true),
-        new webpack.optimize.UglifyJsPlugin({minimize: true}),
-        new webpack.DefinePlugin({
-            'process.env': {
-                BROWSER: JSON.stringify(false)
-            }
-        }),
-        new ExtractTextPlugin('style.css', {
-            allChunks: true
-        })
-    ]
-};
+    {
+        // The configuration for the server-side rendering
+        name: 'server-side rendering',
+        entry: './index.js',
+        target: 'node',
+        output: {
+            path: './dist',
+            filename: 'server.generated.js',
+            libraryTarget: 'commonjs2'
+        },
+        externals: /^[a-z\-0-9]+$/,
+        module: {
+            loaders: commonLoaders
+        }
+    }
+];

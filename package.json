@@ -9,10 +9,11 @@
     "url": "git+https://github.com/domadams/AccaMagic.git"
   },
   "scripts": {
-    "build": "gulp",
+    "build": "webpack && gulp",
     "clean": "gulp clean",
-    "start": "node index.js",
-    "nsp": "gulp nsp"
+    "lint": "eslint --cache .",
+    "nsp": "gulp nsp",
+    "start": "node index.js"
   },
   "engines": {
     "node": ">=4.2.0"
@@ -28,13 +29,13 @@
     "react-router": "^1.0.3"
   },
   "devDependencies": {
+    "babel-eslint": "^5.0.0-beta6",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.13.1",
-    "extract-text-webpack-plugin": "^0.9.1",
     "gulp": "^3.9.0",
     "gulp-nsp": "^2.2.1",
     "gulp-util": "^3.0.7",
