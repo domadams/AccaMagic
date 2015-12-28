@@ -37,5 +37,5 @@ and you should see the site running.
 You can clean down the dist directory by running
 ```
 $ npm run clean
-```.
+```
 This will remove the directory so that you can rebuild the site from scratch.
