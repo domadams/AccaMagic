@@ -11,9 +11,9 @@ To get started fork this repository, clone it, then install the dependencies:
 $ npm install
 ```
 
-Run gulp to build the site and it's assets
+Run build to build the site and it's assets
 ```
-$ gulp
+$ npm run build
 ```
 
 Should you want to run the site locally move into the dist directory (```$ cd dist```) and install the dependencies:
