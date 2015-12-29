@@ -1,5 +1,5 @@
-
 import React, { Component, PropTypes } from 'react';
+import './app.scss';
 //import Header from '../shared/header';
 //import Footer from '../shared/footer';
 
@@ -11,7 +11,7 @@ class App extends Component{
 
     render() {
         return (
-            <div className="app-component">
+            <div>
                 <div>
                     HEADER GOES HERE
                 </div>

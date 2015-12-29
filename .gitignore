@@ -42,3 +42,6 @@ npm-debug.log
 
 #ignore dist directory
 dist
+
+#eslint temp file
+.eslintcache

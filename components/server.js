@@ -39,6 +39,7 @@ export default () => {
                             <meta name="keywords" content="Acca, Accumulator, Bets">
                             <meta name="description" content="I am an accumulator betting predictor">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+                            <link rel="stylesheet" href="/bundle.css">
 							<title>${title}</title>
 						</head>
 						<body>
@@ -61,6 +62,7 @@ export default () => {
                             <meta name="keywords" content="Acca, Accumulator, Bets">
                             <meta name="description" content="I am an accumulator betting predictor">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+							<link rel="stylesheet" href="/bundle.css">
 							<title>Acca Magic | Page not found</title>
 						</head>
 						<body>

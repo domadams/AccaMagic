@@ -1,8 +1,16 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var commonLoaders = [
-    { test: /\.js$/, loader: 'babel-loader' }
+const commonLoaders = [
+    {
+        test: /\.js$/,
+        loader: 'babel-loader'
+    },
+    {
+        test: /\.scss/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?browsers=last 5 versions!sass-loader')
+    }
 ];
 
 module.exports = [
@@ -18,7 +26,10 @@ module.exports = [
         },
         module: {
             loaders: commonLoaders
-        }
+        },
+        plugins: [
+            new ExtractTextPlugin('bundle.css', {allChunks: true})
+        ]
     },
     {
         // The configuration for the server-side rendering
@@ -27,12 +38,24 @@ module.exports = [
         target: 'node',
         output: {
             path: './dist',
+            publicPath: './public',
             filename: 'server.generated.js',
             libraryTarget: 'commonjs2'
+        },
+        node: {
+            console: false,
+            global: false,
+            process: false,
+            Buffer: false,
+            __filename: false,
+            __dirname: false
         },
         externals: /^[a-z\-0-9]+$/,
         module: {
             loaders: commonLoaders
-        }
+        },
+        plugins: [
+            new ExtractTextPlugin('[name].css')
+        ]
     }
 ];
