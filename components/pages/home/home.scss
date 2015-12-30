@@ -1,0 +1,30 @@
+@import '../../../assets/styles/shared/grid';
+
+.intro{
+  width:100%;
+}
+
+.login-wrapper{
+  width:100%
+}
+
+@media screen and (min-width: $small) {
+  .intro{
+    width:70%;
+  }
+
+  .login-wrapper{
+    width:30%
+  }
+}
+
+@media screen and (min-width: $medium) {
+  .intro{
+    width:75%;
+  }
+
+  .login-wrapper{
+    width:25%
+  }
+}
+

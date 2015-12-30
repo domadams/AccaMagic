@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import './app.scss';
-//import Header from '../shared/header';
-//import Footer from '../shared/footer';
+import Header from '../shared/header';
+import Footer from '../shared/footer';
 
 class App extends Component{
     static displayName = 'App';
@@ -13,14 +13,14 @@ class App extends Component{
         return (
             <div>
                 <div>
-                    HEADER GOES HERE
+                    <Header />
                 </div>
-                <div>
+                <div className="row">
                     {/* Render Main Content */}
                     {this.props.children}
                 </div>
                 <div>
-                    FOOTER GOES HERE
+                    <Footer />
                 </div>
             </div>
         );
