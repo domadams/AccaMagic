@@ -10,6 +10,10 @@ const commonLoaders = [
     {
         test: /\.scss/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?browsers=last 5 versions!sass-loader')
+    },
+    {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        loader: 'url-loader?limit=100000'
     }
 ];
 

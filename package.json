@@ -41,12 +41,14 @@
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.13.1",
     "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.5",
     "gulp": "^3.9.0",
     "gulp-nsp": "^2.2.1",
     "gulp-util": "^3.0.7",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.9"
   }
 }
