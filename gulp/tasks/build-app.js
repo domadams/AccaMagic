@@ -12,7 +12,7 @@ module.exports = function(gulp) {
         gulp.src('./package.json', { base: './'})
             .pipe(gulp.dest(distDirectory));
 
-        gulp.src('./assets/fonts', { base: './'})
-            .pipe(gulp.dest(`${distDirectory}/public/fonts`));
+        gulp.src('./config/**/*')
+            .pipe(gulp.dest(distDirectory + 'config'));
     });
 };

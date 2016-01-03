@@ -4,7 +4,7 @@ import App from '../pages/app';
 import Home from '../pages/home';
 
 const routes = (
-    <Route component={App} path="/">
+    <Route component={App} path=":language">
         <IndexRoute component={Home}/>
     </Route>
 );

@@ -8,8 +8,13 @@
  ******************************************************/
 import express from 'express';
 import { join as joinPath } from 'path';
+import config from 'config';
+import helmet from 'helmet';
+import language from './middleware/languages';
 import router from './components/server';
 
 export default () => express()
     .use(express.static(joinPath(__dirname, 'public')))
+    .use(helmet())
+    .use(language(config))
     .use(router());

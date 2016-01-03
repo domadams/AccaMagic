@@ -1,24 +1,15 @@
 @import '../../../assets/styles/shared/colours';
-@import '../../../assets/styles/shared/grid';
 
 .header{
   background-color: $grey-3;
   color:$grey-1;
-  height: 80px;
+  height: 60px;
+  line-height:60px;
   padding: 10px 1.5em;
 
   h1{
     margin:0;
   }
-
-  h2{
-    margin:0;
-  }
 }
 
-@media screen and (min-width: $small) {
-  .header{
-    height: 100px;
-  }
-}
 

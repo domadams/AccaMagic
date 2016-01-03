@@ -17,6 +17,8 @@ export default () => {
     return (req, res) => {
         // construct data to be returned to client
         let data = {};
+        let locale = req.language;
+        let language = locale.split('-')[0];
 
         // Note that req.url here should be the full URL path from
         // the original request, including the query string.
@@ -32,7 +34,7 @@ export default () => {
                 const title = DocumentTitle.rewind() || `Acca Magic`;
                 const template = (
                     `<!doctype html>
-					<html lang="en-gb">
+					<html lang="${language}">
 						<head>
 							<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
                             <meta httpEquiv="Content-type" content="text/html;charset=utf-8">
@@ -55,7 +57,7 @@ export default () => {
             } else {
                 const template = (
                     `<!doctype html>
-					<html lang="en-gb">
+					<html lang="${language}">
 						<head>
 							<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
                             <meta httpEquiv="Content-type" content="text/html;charset=utf-8">

@@ -8,7 +8,6 @@ class Header extends Component{
         return (
             <header className="header">
                 <h1>AccaMagic.com</h1>
-                <h2>Accumlator Betting Tips</h2>
             </header>
         );
     }
