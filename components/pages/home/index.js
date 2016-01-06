@@ -22,9 +22,7 @@ class Home extends Base {
                         <p>
                             {this.t('intro-paragraph-one')}
                         </p>
-                        <p>
-                            {this.t('intro-paragraph-two')}
-                        </p>
+                        <p dangerouslySetInnerHTML={{__html: this.t('intro-paragraph-two')}} />
                         <h3>{this.t('intro-header-two')}</h3>
                         <p>
                             {this.t('intro-paragraph-three')}
