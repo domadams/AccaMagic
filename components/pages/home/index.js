@@ -18,9 +18,22 @@ class Home extends Base {
                         </p>
                     </div>
                     <div className="intro col">
+                        <h3>{this.t('intro-header-one')}</h3>
                         <p>
-                            Bacon ipsum dolor amet pig spare ribs ribeye cow, biltong pastrami sausage porchetta. Filet mignon sausage bacon, short ribs venison bresaola turducken andouille. Short ribs spare ribs cow sirloin. Biltong pork brisket, frankfurter sausage tri-tip shank sirloin capicola porchetta chuck. Ham hock ham cow meatloaf filet mignon meatball. Shoulder cupim frankfurter chuck, tenderloin meatloaf rump salami andouille.
+                            {this.t('intro-paragraph-one')}
                         </p>
+                        <p>
+                            {this.t('intro-paragraph-two')}
+                        </p>
+                        <h3>{this.t('intro-header-two')}</h3>
+                        <p>
+                            {this.t('intro-paragraph-three')}
+                        </p>
+                        <p dangerouslySetInnerHTML={{__html: this.t('intro-paragraph-four')}} />
+                        <p dangerouslySetInnerHTML={{__html: this.t('intro-paragraph-five')}} />
+                        <p dangerouslySetInnerHTML={{__html: this.t('intro-paragraph-six')}} />
+                        <p dangerouslySetInnerHTML={{__html: this.t('intro-paragraph-seven')}} />
+                        <p dangerouslySetInnerHTML={{__html: this.t('intro-paragraph-eight')}} />
                     </div>
                 </div>
             </DocumentTitle>

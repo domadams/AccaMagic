@@ -1,7 +1,8 @@
 @import '../../assets/styles/shared/normalize';
-@import '../../assets/styles/shared/grid';
 @import '../../assets/styles/shared/fonts';
+@import '../../assets/styles/shared/colours';
 
 .app-wrapper{
   font-family: LatoWeb, Helvetica, sans-serif;
+  colour: $grey-4;
 }
