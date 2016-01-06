@@ -1,13 +1,17 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import Base from '../../base';
 import './footer.scss';
 
-class Footer extends Component{
+class Footer extends Base {
     static displayName = 'Footer';
 
     render() {
         return (
             <footer className="footer">
-                <span>Copyright &copy; 2016. AccaMagic.com | Built by <a href="http://www.dominic-adams.com">Dominic Adams</a></span>
+                <span>
+                    {`${this.t('copyright')} `} &copy; {` ${new Date().getFullYear()} ${this.t('acca-magic-com')} | `}
+                    {this.t('built-by')} <a href="http://www.dominic-adams.com">Dominic Adams</a>
+                </span>
             </footer>
         );
     }

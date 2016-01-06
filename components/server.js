@@ -9,16 +9,36 @@ import { join as joinPath } from 'path';
 import React from 'react';
 import { renderToString } from 'react-dom/server'
 import { match, RoutingContext } from 'react-router'
+import requireDir from 'require-dir';
 import DocumentTitle from 'react-document-title';
+import Polyglot from 'node-polyglot';
 // Routes defined in React-Router </Route> components
 import routes from './routes';
 
+// require all files in translations folder
+const languages = requireDir('../assets/translations');
+
 export default () => {
+
+    // wrap each translation set as a Polyglot instance
+    Object.keys(languages).forEach(locale => {
+        languages[locale] = new Polyglot({
+            phrases: languages[locale],
+            locale
+        });
+    });
+
     return (req, res) => {
         // construct data to be returned to client
         let data = {};
         let locale = req.language;
         let language = locale.split('-')[0];
+
+        let dictionary = languages[locale];
+
+        let createElement = function(Component, props) {
+            return <Component {...props} dictionary={dictionary}/>;
+        };
 
         // Note that req.url here should be the full URL path from
         // the original request, including the query string.
@@ -28,13 +48,14 @@ export default () => {
             } else if (redirectLocation) {
                 res.redirect(302, redirectLocation.pathname + redirectLocation.search)
             } else if (renderProps) {
+                renderProps.dictionary = dictionary;
                 // return with content to respond to client
-                const content = renderToString(<RoutingContext {...renderProps} />);
+                const content = renderToString(<RoutingContext {...renderProps} createElement={createElement} />);
                 //Set page title from innermost title in page or default to dictionary
                 const title = DocumentTitle.rewind() || `Acca Magic`;
                 const template = (
                     `<!doctype html>
-					<html lang="${language}">
+					<html lang="${language}" data-locale="${locale}">
 						<head>
 							<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
                             <meta httpEquiv="Content-type" content="text/html;charset=utf-8">
@@ -47,6 +68,7 @@ export default () => {
 						<body>
 						    <div id="content">${content}</div>
                             <script type="application/json" id="initial-data">${data}</script>
+                            <script type="application/json" id="local-translations">${JSON.stringify(dictionary)}</script>
                             <script type="text/javascript" src="/app.js"></script>
 						</body>
 					</html>`

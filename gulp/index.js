@@ -4,7 +4,7 @@ import { join as joinPath } from 'path';
 import util from 'gulp-util';
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['build-app']);
+gulp.task('default', ['translations', 'build-app']);
 
 // load all tasks in tasks directory ...
 let dir = joinPath(__dirname, 'tasks');

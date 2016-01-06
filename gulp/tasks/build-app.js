@@ -14,5 +14,8 @@ module.exports = function(gulp) {
 
         gulp.src('./config/**/*')
             .pipe(gulp.dest(distDirectory + 'config'));
+
+        gulp.src('./assets/translations/**.*')
+            .pipe(gulp.dest(distDirectory + 'public/translations'));
     });
 };
