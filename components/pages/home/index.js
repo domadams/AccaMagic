@@ -1,6 +1,7 @@
 import React from 'react';
 import Base from '../../base';
 import DocumentTitle from 'react-document-title';
+import Login from '../../login-form';
 import './home.scss';
 
 class Home extends Base {
@@ -13,9 +14,7 @@ class Home extends Base {
                         <h2 className="main-title">{this.t('slogan')}</h2>
                     </div>
                     <div className="login-wrapper col">
-                        <p>
-                            Login goes here
-                        </p>
+                        <Login />
                     </div>
                     <div className="intro col">
                         <h3>{this.t('intro-header-one')}</h3>

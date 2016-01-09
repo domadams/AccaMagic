@@ -1,0 +1,13 @@
+@import '../../assets/styles/shared/colours';
+
+.login-form{
+  background-color: $grey-5;
+  padding:10px;
+  border: 1px solid $grey-6;
+  border-radius: 5px;
+  margin-top:20px;
+
+  h3{
+    color:$white;
+  }
+}
