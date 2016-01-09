@@ -2,6 +2,7 @@ import React from 'react';
 import Base from '../../base';
 import DocumentTitle from 'react-document-title';
 import Login from '../../login-form';
+import Results from '../../results';
 import './home.scss';
 
 class Home extends Base {
@@ -15,6 +16,7 @@ class Home extends Base {
                     </div>
                     <div className="login-wrapper col">
                         <Login />
+                        <Results />
                     </div>
                     <div className="intro col">
                         <h3>{this.t('intro-header-one')}</h3>
