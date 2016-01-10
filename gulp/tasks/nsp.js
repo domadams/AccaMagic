@@ -5,6 +5,7 @@
  **********************************************************************/
 
 import gulpNSP from 'gulp-nsp';
+import packageJSON from '../../package.json';
 
 // don't stop gulp flow if some vulnerabilities
 // have been found
@@ -12,7 +13,7 @@ import gulpNSP from 'gulp-nsp';
 module.exports = function(gulp){
     gulp.task('nsp', function (cb) {
         gulpNSP({
-            package: '../../package.json',
+            package: packageJSON,
             stopOnError: false
         }, cb);
     });

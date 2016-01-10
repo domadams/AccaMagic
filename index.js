@@ -1,4 +1,3 @@
-delete process.env.BROWSER;
 require('babel-core/register');
 if (process.env.NODE_ENV === 'production') {
     require('react/dist/react.min'); // prime cache
@@ -9,5 +8,8 @@ if (process.env.NODE_ENV === 'production') {
 
     require('react-router/umd/ReactRouter.min'); // prime cache
     require.cache[require.resolve('react-router')] = require.cache[require.resolve('react-router/umd/ReactRouter.min')];
+
+    require('node-polyglot/build/polyglot.min'); // prime cache
+    require.cache[require.resolve('node-polyglot')] = require.cache[require.resolve('node-polyglot/build/polyglot.min')];
 }
 require('./server');

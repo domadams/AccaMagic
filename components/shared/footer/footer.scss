@@ -3,17 +3,18 @@
 @import '../../../assets/styles/shared/typography';
 
 .footer{
-  background-color:$grey-2;
+  background-color:$grey-1;
+  border-top: 1px solid $grey-7;
   clear:both;
-  color:$grey-1;
+  color:$grey-4;
   font-size:$fontSmall;
-  height:30px;
+  height:100px;
   line-height: 30px;
   padding:10px 1.5em;
   text-align: center;
 
   a{
-    color:$grey-1;
+    color:$grey-4;
     text-decoration: none;
     transition: all 200ms linear;
 

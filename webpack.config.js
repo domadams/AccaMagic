@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const node_dir = __dirname + '/node_modules';
+
 const commonLoaders = [
     {
         test: /\.js$/,
@@ -32,7 +34,12 @@ module.exports = [
             loaders: commonLoaders
         },
         plugins: [
-            new ExtractTextPlugin('bundle.css', {allChunks: true})
+            new ExtractTextPlugin('bundle.css', {allChunks: true}),
+            new webpack.DefinePlugin({
+                'process.env':{
+                    'NODE_ENV': JSON.stringify('production')
+                }
+            })
         ]
     },
     {
@@ -56,6 +63,10 @@ module.exports = [
         },
         externals: /^[a-z\-0-9]+$/,
         module: {
+            noParse: [
+                node_dir + '/react/react.min.js',
+                node_dir + '/react/react-dom.min.js'
+            ],
             loaders: commonLoaders
         },
         plugins: [
