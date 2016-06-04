@@ -2,7 +2,7 @@
   "name": "Acca-Magic",
   "description": "A football acuumulator predictor",
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Dominic Adams",
   "license": "UNLICENSED",
   "private": true,
@@ -18,7 +18,7 @@
     "start": "node index.js"
   },
   "engines": {
-    "node": ">=4.2.0"
+    "node": ">=6.2.0"
   },
   "dependencies": {
     "babel-core": "^6.4.0",
