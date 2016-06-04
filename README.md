@@ -3,7 +3,7 @@ Accumulator Magic Site Code
 
 ## Getting Started
 
-**Prerequisites** Please ensure that you have Node.js v4.2.x installed [nodejs.org](http://nodejs.org/dist/v4.2.3/) once this is installed upgrade npm (`$ npm install -g npm`).
+**Prerequisites** Please ensure that you have Node.js v6.2.x installed [nodejs.org](http://nodejs.org/dist/v6.2.0/) once this is installed upgrade npm (`$ npm install -g npm`).
 Then install `gulp` globally (`$ npm install -g gulp`)
 
 To get started fork this repository, clone it, then install the dependencies:
